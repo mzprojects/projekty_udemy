@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function CreditRequest(data){
+            this.data = data;
+        }
+
+
+        function CreditHistory(creditRequest, amount){
+            this.check = function(){
+                let a;
+                amount>100000 ? a=true : a=false;
+                return a;
+            }
+
+        }
+
+        function RiskCheck(creditRequest, amount){
+            this.check = function(){
+                return true;
+            }
+
+        }  
+
+        CreditRequest.prototype.applyFor = function(amount){
+            let result = "approved";
+
+            let riskCheck = new RiskCheck(this.data, amount);
+            if(riskCheck.check() === false) result = "not approved";
+
+            let credityHistoryCheck = new CreditHistory(this.data, amount);
+            if(credityHistoryCheck.check() === false) result = "not approved";
+
+            return result;
+        }
+        let creditRequest = new CreditRequest({name: "Karol"});
+        let result = creditRequest.applyFor(10000);
+        console.log(result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

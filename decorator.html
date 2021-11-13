@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function User(name, adr){
+            this.name = name;
+            this.adr = adr;
+        }
+
+        let user = new User("ADAM", "BWA");
+
+        function decorateUserToEmployee(user, data){
+            user.company = data.company || "Default";
+            user.salary = data.salary || 5000;
+            user.tasks = [];
+            user.addTask = function(task){
+                this.tasks.push(task);
+            }
+            user.listTasks = function(){
+                this.tasks.forEach(element => { console.log(element.title);
+                    
+                });
+            }
+            return user;
+        }
+
+        let data = {company: "SomeCompany Sp.z o.o."};
+        let emloyee = decorateUserToEmployee(user, data);
+
+        emloyee.addTask({title: "zadanie 1"});        
+        emloyee.addTask({title: "zadanie 12"});    
+        emloyee.addTask({title: "zadanie 14"});        
+        emloyee.addTask({title: "zadanie 15"});        
+     
+        emloyee.listTasks();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

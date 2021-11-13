@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body{
+            background-color:aliceblue;
+            padding: 3rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h2{
+            color: cadetblue;
+            text-align: center;
+        }
+
+        .row{
+            display: flex;
+        }
+
+        .column{
+            flex: 50%;
+        }
+
+        #avatar-img{
+            margin: 0.3em;
+            border-radius: 5em;
+        }   
+        
+        .user-profile{
+            background-color: white;
+            padding: 0.5em;
+            width: 20em;
+            margin: auto;
+            border-radius: 0.4em;
+            color: cadetblue;
+        }
+        #full-name{
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        #username{
+            font-size: 0.8em;
+        }
+        
+        #user-details{
+            font-size: 0.8em;
+            color: teal;
+            margin-top: 1em;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Random User</h2>
+    <div class="user-profile">
+        <div class="row">
+            <div class="column">
+                <img src="" alt="" id="avatar-img">
+            </div>
+            <div class="column">
+                <div id="full-name">Full Name</div>
+                <div id="username">usernamne</div>
+                <div id="user-details">
+                    <div id="email">aaa</div>
+                    <div id="country">aaa</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        window.onload = function(){
+
+            fetch("https://randomuser.me/api/")
+            .then ( response => response.json() )
+            .then ( data => dataReady(data) );
+        }
+
+        function dataReady(data){
+            var result = data.results[0];
+            var fullname = result.name.first + " " + result.name.last;
+            var img = result.picture.large;
+            var username = result.login.username;
+            var email = result.email;
+            var country = result.location.country;
+
+            document.getElementById("avatar-img").src = img;
+            document.getElementById("full-name").innerHTML = fullname;
+            document.getElementById("username").innerHTML = "@"+username;
+            document.getElementById("email").innerHTML = email;
+            document.getElementById("country").innerHTML = country;
+
+        }
+
+    </script>
+</body>
+</html>

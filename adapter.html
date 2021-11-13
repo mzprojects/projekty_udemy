@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function Transport(ccc){
+            this.ccc =ccc;
+            this.send = function(adr, weight){
+                return 120;
+
+            }
+        }
+        let adr = {
+            country: "pl"
+        };
+        let ccc= {
+            token: "user:1231312"
+        };
+        let odlTransport = new Transport(ccc);
+        let odlPrice = odlTransport.send(adr, 10);
+        console.log("stara cena: " + odlPrice);
+
+        function newTransport(){
+            return{
+                login: function(ccc){
+
+                },
+                setPriority: function(priority){
+
+                },
+                setDestination: function(adr){
+
+                },
+                getPrice: function(weight){
+                    return 110;
+                }
+            }
+        }
+
+        function TransportAdapter(ccc){
+            let shipping = newTransport();
+            shipping.login(ccc);
+            return{
+                send: function(adr, weight){
+                    shipping.setPriority("normal");
+                    shipping.setDestination(adr);
+                    return shipping.getPrice(weight);
+                }
+            }
+        }
+        let cheaperTransport = TransportAdapter(ccc);
+        let newPrice = cheaperTransport.send(adr, 10);
+        console.log("nowa cena: "+ newPrice);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

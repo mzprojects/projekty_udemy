@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        body{
+            background-color: darkslategray;
+
+        }
+        #clock {
+            margin: auto;
+            margin-top: 5em;
+            text-align: center;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">: :</div>    
+
+    <script>
+        window.onload = function(){
+            setInterval( function(){
+                let checkZero = function(i){
+                    if(i<10){
+                        i = "0" + i;
+                    }
+                    return i;
+                };
+                let time = new Date();
+                let hours = checkZero(time.getHours());
+                let minutes = checkZero(time.getMinutes());
+                let seconds = checkZero(time.getSeconds());
+
+
+                document.getElementById("clock").innerHTML = hours + " : " + minutes + " : " + seconds;
+                //console.log("test");
+            }, 1000)
+        }
+
+    </script>
+</body>
+</html>
