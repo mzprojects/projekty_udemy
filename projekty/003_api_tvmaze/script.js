@@ -10,7 +10,7 @@ let showApp = {
   init: function () {
     this.showsDataSection = document.querySelector(".data-section");
     this.searchInput = document.getElementById("search-input");
-    this.searchInput.addEventListener("keyup input", () => {
+    this.searchInput.addEventListener("keyup", () => {
       this.loadData(this.searchInput.value);
     });
   },
@@ -33,9 +33,10 @@ let showApp = {
   },
   generateBoxData: function (i) {
     let d = this.data[i].show;
+    let image = d.image ? d.image.medium : "noimage.png";
     return {
       name: d.name,
-      image: d.image.medium,
+      image: image,
       overview: d.summary,
       genres: d.genres,
     };
@@ -59,7 +60,6 @@ let showApp = {
     mainBox.appendChild(genresBox);
     mainBox.appendChild(overviewBox);
     return mainBox;
-
     // <div class="show-box">
     // <img
     //   src="https://static.tvmaze.com/uploads/images/medium_portrait/41/104550.jpg"
