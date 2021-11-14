@@ -1,2 +1,83 @@
-body {
-  background-color: cyan; }
+.c-g {
+  background-color: gray; }
+
+.c-d {
+  background-color: #bf4040; }
+
+.c-s {
+  background-color: red; }
+
+.c-l {
+  background-color: #ff9999; }
+
+.c-dk {
+  background-color: #660000; }
+
+.c-m {
+  background-color: #804000; }
+
+.dupa {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  border-radius: 10px; }
+
+button {
+  background-color: green;
+  color: red;
+  border-radius: 5px; }
+
+.alert, .alert-success, .alert-danger, .alert-warning {
+  border: 1px solid black;
+  color: black;
+  margin: 0.5rem;
+  padding: 0.5rem; }
+
+.alert-success {
+  color: green;
+  border: 1px solid green; }
+
+.alert-danger {
+  color: red;
+  border: 1px solid red; }
+
+.alert-warning {
+  color: yellow;
+  border: 1px solid yellow; }
+
+h1 {
+  font-size: 2.3rem;
+  color: red; }
+
+h2 {
+  font-size: 1.3rem; }
+
+h3 {
+  font-size: 0.96667rem; }
+
+h4 {
+  font-size: 0.8rem; }
+
+h5 {
+  font-size: 0.7rem; }
+
+h6 {
+  font-size: 0.63333rem; }
+
+.display-6 {
+  font-size: 2rem; }
+
+.display-5 {
+  font-size: 1.7rem; }
+
+.display-4 {
+  font-size: 1.4rem; }
+
+.display-3 {
+  font-size: 1.1rem; }
+
+.display-2 {
+  font-size: 0.8rem; }
+
+.display-1 {
+  font-size: 0.5rem; }
