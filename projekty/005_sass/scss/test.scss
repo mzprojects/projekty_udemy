@@ -1,0 +1,76 @@
+$color: red;
+
+.c {
+  &-g {
+    background-color: grayscale($color);
+  }
+  &-d {
+    background-color: desaturate($color: $color, $amount: 50%);
+  }
+
+  &-s {
+    background-color: saturate($color, 50%);
+  }
+  &-l {
+    background-color: lighten($color, $amount: 30%);
+  }
+  &-dk {
+    background-color: darken($color, $amount: 30);
+  }
+  &-m {
+    background-color: mix($color, green);
+  }
+}
+
+@mixin round-corners($rad: 5px) {
+  border-radius: $rad;
+}
+.dupa {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  @include round-corners(10px);
+}
+
+button {
+  background-color: green;
+  color: red;
+  @include round-corners();
+}
+
+.alert {
+  border: 1px solid black;
+  color: black;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+$alerts: (
+  success: green,
+  danger: red,
+  warning: yellow,
+);
+
+@each $name, $color in $alerts {
+  .alert-#{$name} {
+    @extend .alert;
+    color: $color;
+    border: 1px solid $color;
+  }
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: 0.3rem + 2rem / $i;
+    @if ($i == 1) {
+      color: red;
+    }
+  }
+}
+$i: 6;
+@while ($i > 0) {
+  .display-#{$i} {
+    font-size: 0.2rem + ($i * 0.3rem);
+  }
+  $i: $i - 1;
+}
