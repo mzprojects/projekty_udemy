@@ -27,12 +27,12 @@ let userApp = {
     this.setData();
 
     document.addEventListener("keydown", function (e) {
-      switch (e.Code) {
-        case ArrowLeft: {
+      switch (e.code) {
+        case "ArrowLeft": {
           userApp.prevUser();
           break;
         }
-        case ArrowRight: {
+        case "ArrowRight": {
           userApp.nextUser();
           break;
         }
