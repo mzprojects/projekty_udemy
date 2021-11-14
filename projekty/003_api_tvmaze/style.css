@@ -29,8 +29,8 @@ body {
 .data-section {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-
 .show-box {
   position: relative;
   width: 300px;
