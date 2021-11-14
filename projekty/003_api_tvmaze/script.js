@@ -10,7 +10,7 @@ let showApp = {
   init: function () {
     this.showsDataSection = document.querySelector(".data-section");
     this.searchInput = document.getElementById("search-input");
-    this.searchInput.addEventListener("keyup input", () => {
+    this.searchInput.addEventListener("keyup", () => {
       this.loadData(this.searchInput.value);
     });
   },
