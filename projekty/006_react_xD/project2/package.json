@@ -2,6 +2,7 @@
   "name": "project2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mzprojects.github.io/projekty_udemy/react",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
