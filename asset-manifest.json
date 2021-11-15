@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/projekty_udemy/react/static/css/main.9f59ec9f.chunk.css",
-    "main.js": "/projekty_udemy/react/static/js/main.50547cab.chunk.js",
-    "main.js.map": "/projekty_udemy/react/static/js/main.50547cab.chunk.js.map",
-    "runtime-main.js": "/projekty_udemy/react/static/js/runtime-main.e42d40f7.js",
-    "runtime-main.js.map": "/projekty_udemy/react/static/js/runtime-main.e42d40f7.js.map",
-    "static/js/2.e540a431.chunk.js": "/projekty_udemy/react/static/js/2.e540a431.chunk.js",
-    "static/js/2.e540a431.chunk.js.map": "/projekty_udemy/react/static/js/2.e540a431.chunk.js.map",
-    "static/js/3.c761b850.chunk.js": "/projekty_udemy/react/static/js/3.c761b850.chunk.js",
-    "static/js/3.c761b850.chunk.js.map": "/projekty_udemy/react/static/js/3.c761b850.chunk.js.map",
-    "index.html": "/projekty_udemy/react/index.html",
-    "static/css/main.9f59ec9f.chunk.css.map": "/projekty_udemy/react/static/css/main.9f59ec9f.chunk.css.map",
-    "static/js/2.e540a431.chunk.js.LICENSE.txt": "/projekty_udemy/react/static/js/2.e540a431.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/projekty_udemy/react/static/media/logo.6ce24c58.svg"
+    "main.css": "/projekty_udemy/static/css/main.9f59ec9f.chunk.css",
+    "main.js": "/projekty_udemy/static/js/main.50547cab.chunk.js",
+    "main.js.map": "/projekty_udemy/static/js/main.50547cab.chunk.js.map",
+    "runtime-main.js": "/projekty_udemy/static/js/runtime-main.01f7c087.js",
+    "runtime-main.js.map": "/projekty_udemy/static/js/runtime-main.01f7c087.js.map",
+    "static/js/2.e540a431.chunk.js": "/projekty_udemy/static/js/2.e540a431.chunk.js",
+    "static/js/2.e540a431.chunk.js.map": "/projekty_udemy/static/js/2.e540a431.chunk.js.map",
+    "static/js/3.c761b850.chunk.js": "/projekty_udemy/static/js/3.c761b850.chunk.js",
+    "static/js/3.c761b850.chunk.js.map": "/projekty_udemy/static/js/3.c761b850.chunk.js.map",
+    "index.html": "/projekty_udemy/index.html",
+    "static/css/main.9f59ec9f.chunk.css.map": "/projekty_udemy/static/css/main.9f59ec9f.chunk.css.map",
+    "static/js/2.e540a431.chunk.js.LICENSE.txt": "/projekty_udemy/static/js/2.e540a431.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/projekty_udemy/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e42d40f7.js",
+    "static/js/runtime-main.01f7c087.js",
     "static/js/2.e540a431.chunk.js",
     "static/css/main.9f59ec9f.chunk.css",
     "static/js/main.50547cab.chunk.js"
