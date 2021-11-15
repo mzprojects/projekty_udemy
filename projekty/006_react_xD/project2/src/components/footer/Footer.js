@@ -11,7 +11,7 @@ function Footer(props) {
   for (const [index, value] of elements1.entries()) {
     items.push(<li>{value}</li>);
   }
-  console.log({ items });
+  console.log();
   return (
     <div>
       <footer>
