@@ -2,9 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Footer from "./components/footer/Footer";
+
 import Heading from "./components/heading/Heading";
 import reportWebVitals from "./reportWebVitals";
+
+const elements1 = ["Regulamin", "FAQ", "O nas", "Kontakt"];
+const elements2 = ["cono", "cono2", "cono3"];
 
 const companyData = {
   email: "contact@email.com",
@@ -16,7 +19,6 @@ ReactDOM.render(
   <React.StrictMode>
     <Heading headerTitle="ELO MORDO" />
     <App />
-    <Footer companyData={companyData} />
   </React.StrictMode>,
   document.getElementById("root")
 );

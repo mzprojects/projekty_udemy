@@ -2,34 +2,24 @@ import React from "react";
 import "./footer.css";
 import "../copyright/Copyright";
 import Copyright from "../copyright/Copyright";
-import { render } from "react-dom";
+import { Link, Routes } from "react-router-dom";
 
-const elements1 = ["Regulamin", "FAQ", "O nas", "Kontakt"];
-const elements2 = ["cono", "cono2", "cono3"];
-
-const items = [];
-
-function Footer(props) {
-  for (const [index, value] of elements1.entries()) {
-    items.push(<li>{value}</li>);
-    console.log({ items });
-  }
-  return (
-    <div>
+export default class Footer extends React.Component {
+  render() {
+    return (
       <footer>
         <ul>
-          {elements1.map((value, index) => {
-            return <li>{value}</li>;
-          })}
-          {elements2.map((value, index) => {
-            return <li>{value}</li>;
-          })}
+          {this.props.elements1.map((value) => (
+            <li>{value}</li>
+          ))}
+          {this.props.elements2.map((value) => (
+            <li>{value}</li>
+          ))}
         </ul>
+        <Link to="/dupa">LINK DO DUPY</Link>
 
         <Copyright year="2021" />
       </footer>
-    </div>
-  );
+    );
+  }
 }
-
-export default Footer;
