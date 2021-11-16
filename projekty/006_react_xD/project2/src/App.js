@@ -41,15 +41,17 @@ const companyData = {
 };
 
 const App = () => (
-  <Router>
-    <Navigation />
-    <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/articles" element={<Articles />}></Route>
-      <Route path="/dupa" element={<Dupa />}></Route>
-    </Routes>
-    <Footer {...aprops} />
-  </Router>
+  <div>
+    <Router>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/articles" element={<Articles />}></Route>
+        <Route path="/dupa" element={<Dupa />}></Route>
+      </Routes>
+      <Footer {...aprops} />
+    </Router>
+  </div>
 );
 
 export default App;
