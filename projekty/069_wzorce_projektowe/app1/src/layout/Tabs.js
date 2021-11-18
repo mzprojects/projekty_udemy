@@ -22,13 +22,9 @@ const StyledTabs = styled(Link)`
 
 const tabArray = [];
 // TODO
-const addTab = ({ tabArray }) => {
+const addTab = (tabArray) => {
   const tabName = "tab" + tabArray.length;
-  const newTab = (
-    <StyledTabs to={tabName} w={0.5}>
-      TAB#{tabName}
-    </StyledTabs>
-  );
+  const newTab = <StyledTabs to={tabName}>TAB#{tabName}</StyledTabs>;
   tabArray.splice(0, 0, newTab);
 };
 tabArray.push(
