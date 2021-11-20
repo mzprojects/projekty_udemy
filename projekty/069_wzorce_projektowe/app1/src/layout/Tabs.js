@@ -22,19 +22,36 @@ const StyledTabs = styled(Link)`
 
 const tabArray = [];
 // TODO
-const addTab = (tabArray) => {
-  const tabName = "tab" + tabArray.length;
-  const newTab = <StyledTabs to={tabName}>TAB#{tabName}</StyledTabs>;
-  tabArray.splice(0, 0, newTab);
-};
+// const addTab = (tabArray) => {
+//   const tabName = "tab" + tabArray.length;
+//   const newTab = <StyledTabs to={tabName}>TAB#{tabName}</StyledTabs>;
+//   tabArray.splice(0, 0, newTab);
+// };
 tabArray.push(
-  <StyledTabs to="#" w={0.5} onClick={addTab(tabArray)}>
+  <StyledTabs to="#" w={0.5}>
     {" "}
     +{" "}
   </StyledTabs>
 );
 
-const deleteTab = () => null;
+tabArray.splice(
+  tabArray.length - 1,
+  0,
+  <StyledTabs to={"/tab1"} w={1} active>
+    {" "}
+    TAB#{tabArray.length}{" "}
+  </StyledTabs>
+);
+tabArray.splice(
+  tabArray.length - 1,
+  0,
+  <StyledTabs to={"/tab2"} w={1}>
+    {" "}
+    TAB#{tabArray.length}{" "}
+  </StyledTabs>
+);
+
+// const deleteTab = () => null;
 // user.tasks = [];
 // user.addTask = function(task){
 //     this.tasks.push(task);

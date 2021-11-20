@@ -10,13 +10,15 @@ const GlobalStyle = createGlobalStyle`
 
       body {
         background: black;
+
       }
-      nav{
+      footer, nav{
     background: silver;
-    height: 30px;
+
     display: flex;
         ul{
             display: flex;
+
             align-items: center;
             width: 70%;
             justify-content: space-evenly;
@@ -25,14 +27,13 @@ const GlobalStyle = createGlobalStyle`
             vertical-align: middle;
             li {
                 flex: flex;
-                
                 a{
                     text-decoration: none;
                 }
             }
         }
       }
-      .offer {
+      /* .offer {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -96,7 +97,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 4px;
         color: white;
         font-size: 1.1rem;
-      }
+      } */
 `;
 
 export default GlobalStyle;
