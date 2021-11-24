@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Roboto, Arial, Arial, Helvetica, sans-serif; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0; }
+
+header {
+  position: sticky;
+  top: 0;
+  background: yellowgreen;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+  header .header-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    header .header-section-hamburger {
+      min-width: 60px;
+      height: 60px;
+      font-size: 1.2rem;
+      text-align: center;
+      background-color: #dbdbdb;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; }
+      header .header-section-hamburger-icon {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        padding-top: 3px;
+        border-radius: 50%;
+        background-color: white; }
+    header .header-section-logo {
+      max-height: 30px; }
+      header .header-section-logo img {
+        max-height: 30px; }
+    header .header-section-search {
+      display: flex;
+      align-items: center; }
+      header .header-section-search-input {
+        height: 32px; }
+      header .header-section-search-button {
+        height: 32px; }
+      header .header-section-search img {
+        height: 75%; }
+    header .header-section-buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      header .header-section-buttons-icon {
+        font-size: 1.2rem;
+        margin-left: 5px;
+        margin-right: 5px; }
+
+main {
+  display: flex;
+  flex: 1; }
+  main nav {
+    flex: 1 0;
+    min-width: 60px;
+    max-width: 200px;
+    background: beige;
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    main nav.mini {
+      max-width: 60px; }
+  main .video-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1rem; }
+    main .video-section .video-container {
+      display: flex;
+      flex-direction: column;
+      margin: 0.5rem 0.8rem;
+      padding: 0.5rem 0.8rem; }
+      main .video-section .video-container .thumbnail {
+        position: relative;
+        display: flex;
+        background-color: #ccc; }
+        main .video-section .video-container .thumbnail::before {
+          content: attr(data-video-lenght);
+          position: absolute;
+          background-color: rgba(0, 0, 0, 0.8);
+          color: white;
+          right: 5px;
+          bottom: 5px;
+          padding: 0.1em 0.3em;
+          border-radius: 0.3em;
+          font-size: 0.9rem; }
+        main .video-section .video-container .thumbnail-image {
+          height: 100%;
+          width: 100%;
+          min-height: 150px;
+          min-width: 250px; }
+      main .video-section .video-container .video-channel-icon {
+        margin-right: 0.75rem;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        background-color: #ccc; }
+      main .video-section .video-container .video-bottom-section {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 0.4rem; }
+        main .video-section .video-container .video-bottom-section .video-details-section {
+          display: flex;
+          flex-direction: column; }
+          main .video-section .video-container .video-bottom-section .video-details-section .video-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+            color: black; }
+          main .video-section .video-container .video-bottom-section .video-details-section .video-channel-name {
+            transition: color 150ms;
+            color: #555; }
+            main .video-section .video-container .video-bottom-section .video-details-section .video-channel-name:hover {
+              color: #999; }
+          main .video-section .video-container .video-bottom-section .video-details-section .video-metadata {
+            color: #555; }
