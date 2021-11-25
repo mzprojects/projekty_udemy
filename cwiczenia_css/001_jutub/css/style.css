@@ -66,11 +66,11 @@ header {
       header .header-section-search-input {
         height: 34px;
         box-shadow: inset 0px 0px 2px 0px #777777;
-        border: #777 solid 1px;
+        border: #777 solid 0.1px;
         padding-left: 1.5rem;
         width: 30vw; }
         header .header-section-search-input:focus {
-          border: blue solid 1px;
+          border: blue solid 0.1px;
           outline: none; }
       header .header-section-search-button {
         height: 32px; }
@@ -81,6 +81,23 @@ header {
       flex-direction: row;
       align-items: center;
       justify-content: center; }
+      header .header-section-buttons a {
+        position: relative; }
+        header .header-section-buttons a .tooltip {
+          background: rgba(0, 0, 0, 0);
+          color: rgba(0, 0, 0, 0);
+          text-align: center;
+          padding: 0.5rem 0.5rem;
+          font-size: 0.7rem;
+          /* Position the tooltip */
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          top: 100%;
+          transition: background, color 0.1s; }
+        header .header-section-buttons a:hover .tooltip {
+          background: rgba(39, 39, 39, 0.8);
+          color: rgba(255, 255, 255, 0.8); }
       header .header-section-buttons-icon {
         border-radius: 50%;
         background-color: white;
@@ -98,7 +115,7 @@ header {
 main {
   display: flex;
   flex: 1;
-  max-height: 93vh; }
+  max-height: 90vh; }
   main nav {
     flex: 1 0;
     min-width: 60px;
