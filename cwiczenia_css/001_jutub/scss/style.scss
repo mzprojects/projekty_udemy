@@ -4,18 +4,50 @@
   box-sizing: border-box;
   font-family: Roboto, Arial, Arial, Helvetica, sans-serif;
 }
-
+html {
+  font-size: 10px;
+}
 body {
+  font-size: 1.6rem;
   display: flex;
-  min-height: 100vh;
+  max-height: 100%;
   flex-direction: column;
   margin: 0;
 }
 
+@mixin icon($size) {
+  border-radius: 50%;
+  background-color: white;
+  width: $size * 1rem;
+  height: $size * 1rem;
+  transition: background 0.1s;
+  text-align: center;
+  &:active {
+    background-color: beige;
+  }
+  img {
+    padding-top: $size * 0.2rem;
+    width: $size * 0.8rem;
+    height: $size * 0.8rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  &-track {
+    background: none;
+  }
+  &-thumb {
+    background: #555;
+    border-radius: 2rem;
+    &:hover {
+      background: #888;
+    }
+  }
+}
+
 header {
-  position: sticky;
-  top: 0;
-  background: yellowgreen;
+  background: white;
   height: 60px;
   display: flex;
   flex-direction: row;
@@ -29,24 +61,15 @@ header {
     &-hamburger {
       min-width: 60px;
       height: 60px;
-      font-size: 1.2rem;
-      text-align: center;
-      background-color: #dbdbdb;
+      background-color: white;
       display: flex;
-      align-content: center;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       &-icon {
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        padding-top: 3px;
-        border-radius: 50%;
-        background-color: white;
+        @include icon(3);
       }
     }
-
     &-logo {
       max-height: 30px;
       img {
@@ -57,7 +80,15 @@ header {
       display: flex;
       align-items: center;
       &-input {
-        height: 32px;
+        height: 34px;
+        box-shadow: inset 0px 0px 2px 0px rgba(119, 119, 119, 1);
+        border: #777 solid 1px;
+        padding-left: 1.5rem;
+        width: 30vw;
+        &:focus {
+          border: blue solid 1px;
+          outline: none;
+        }
       }
       &-button {
         height: 32px;
@@ -70,10 +101,9 @@ header {
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
       &-icon {
-        font-size: 1.2rem;
-        margin-left: 5px;
-        margin-right: 5px;
+        @include icon(4);
       }
     }
   }
@@ -90,11 +120,12 @@ header {
 main {
   display: flex;
   flex: 1;
+  max-height: 93vh;
   nav {
     flex: 1 0;
     min-width: 60px;
     max-width: 200px;
-    background: beige;
+    background: white;
     order: -1;
     display: flex;
     flex-direction: column;
@@ -105,69 +136,73 @@ main {
     .nav-items {
     }
   }
-  .video-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-    .video-container {
+  .videos {
+    overflow-y: scroll;
+    background: beige;
+    .video-section {
       display: flex;
-      flex-direction: column;
-      margin: 0.5rem 0.8rem;
-      padding: 0.5rem 0.8rem;
-      .thumbnail {
-        position: relative;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      .video-container {
         display: flex;
-        background-color: #ccc;
-
-        &::before {
-          content: attr(data-video-lenght);
-          position: absolute;
-          background-color: rgba(0, 0, 0, 0.8);
-          color: white;
-          right: 5px;
-          bottom: 5px;
-          padding: 0.1em 0.3em;
-          border-radius: 0.3em;
-          font-size: 0.9rem;
-        }
-        &-image {
-          height: 100%;
-          width: 100%;
-          min-height: 150px;
-          min-width: 250px;
-        }
-      }
-      .video-channel-icon {
-        margin-right: 0.75rem;
-        border-radius: 50%;
-        width: 36px;
-        height: 36px;
-        background-color: #ccc;
-      }
-
-      .video-bottom-section {
-        display: flex;
-        align-items: flex-start;
-        margin-top: 0.4rem;
-        .video-details-section {
+        flex-direction: column;
+        margin: 0.5rem 0.8rem;
+        padding: 0.5rem 0.8rem;
+        .thumbnail {
+          position: relative;
           display: flex;
-          flex-direction: column;
-          .video-title {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            text-decoration: none;
-            color: black;
+          background-color: #ccc;
+
+          &::before {
+            content: attr(data-video-lenght);
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            right: 5px;
+            bottom: 5px;
+            padding: 0.1em 0.3em;
+            border-radius: 0.3em;
+            font-size: 1.2rem;
           }
-          .video-channel-name {
-            transition: color 150ms;
-            color: #555;
-            &:hover {
-              color: #999;
+          &-image {
+            height: 100%;
+            width: 100%;
+            min-height: 150px;
+            min-width: 250px;
+          }
+        }
+        .video-channel-icon {
+          margin-right: 0.75rem;
+          border-radius: 50%;
+          width: 36px;
+          height: 36px;
+          background-color: #ccc;
+        }
+
+        .video-bottom-section {
+          display: flex;
+          align-items: flex-start;
+          margin-top: 0.4rem;
+          .video-details-section {
+            display: flex;
+            flex-direction: column;
+            .video-title {
+              font-weight: bold;
+              margin-bottom: 0.5rem;
+              text-decoration: none;
+              color: black;
             }
-          }
-          .video-metadata {
-            color: #555;
+            .video-channel-name {
+              transition: color 0.15s;
+              color: #555;
+              &:hover {
+                color: #999;
+              }
+            }
+            .video-metadata {
+              color: #555;
+            }
           }
         }
       }
