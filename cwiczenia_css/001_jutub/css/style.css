@@ -10,7 +10,6 @@ html {
 body {
   font-size: 1.6rem;
   display: flex;
-  max-height: 100%;
   flex-direction: column;
   margin: 0; }
 
@@ -57,48 +56,46 @@ header {
           width: 2.4rem;
           height: 2.4rem; }
     header .header-section-logo {
-      max-height: 30px; }
+      max-height: 3rem; }
       header .header-section-logo img {
-        max-height: 30px; }
+        max-height: 3rem; }
     header .header-section-search {
-      display: flex;
-      align-items: center; }
+      flex-grow: 1;
+      margin: 0 5rem 0 8rem;
+      display: flex; }
+      header .header-section-search .search-form {
+        display: flex;
+        align-items: center;
+        margin: 0 0.5rem; }
       header .header-section-search-input {
-        height: 34px;
-        box-shadow: inset 0px 0px 2px 0px #777777;
-        border: #777 solid 0.1px;
-        padding-left: 1.5rem;
-        width: 30vw; }
+        width: 100%;
+        height: 3rem;
+        border: #777 solid 1px;
+        padding: 0 1.5rem;
+        font-size: 2rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0; }
         header .header-section-search-input:focus {
           border: blue solid 0.1px;
           outline: none; }
       header .header-section-search-button {
-        height: 32px; }
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-left: 0;
+        padding: 0;
+        margin: 0; }
       header .header-section-search img {
-        height: 75%; }
+        height: 2rem;
+        padding: 0 1.5rem; }
     header .header-section-buttons {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
       margin-right: 1rem; }
-      header .header-section-buttons a {
-        position: relative; }
-        header .header-section-buttons a .tooltip {
-          background: rgba(0, 0, 0, 0);
-          color: rgba(0, 0, 0, 0);
-          text-align: center;
-          padding: 0.5rem 0.5rem;
-          font-size: 1.1rem;
-          /* Position the tooltip */
-          position: absolute;
-          z-index: 1;
-          left: -0.5rem;
-          top: 100%;
-          transition: background, color 0.1s; }
-        header .header-section-buttons a:hover .tooltip {
-          background: rgba(39, 39, 39, 0.8);
-          color: rgba(255, 255, 255, 0.8); }
       header .header-section-buttons-icon {
         border-radius: 50%;
         background-color: white;
@@ -112,11 +109,26 @@ header {
           padding-top: 0.8rem;
           width: 3.2rem;
           height: 3.2rem; }
+  header a {
+    position: relative; }
+    header a .tooltip {
+      background: rgba(0, 0, 0, 0);
+      color: rgba(0, 0, 0, 0);
+      text-align: center;
+      padding: 0.5rem 0.5rem;
+      font-size: 1.1rem;
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+      left: -0.5rem;
+      top: 100%;
+      transition: background 0.1s; }
+    header a:hover .tooltip {
+      background: rgba(39, 39, 39, 0.8);
+      color: rgba(255, 255, 255, 0.8); }
 
 main {
-  display: flex;
-  flex: 1;
-  max-height: 90vh; }
+  display: flex; }
   main nav {
     flex: 1 0;
     min-width: 60px;
@@ -128,24 +140,49 @@ main {
     align-items: center; }
     main nav.mini {
       max-width: 60px; }
-  main .videos {
+  main .content .categories {
+    padding: 1rem 2rem;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999; }
+    main .content .categories-section {
+      display: flex;
+      overflow: hidden; }
+    main .content .categories .category {
+      margin-right: 1rem;
+      word-wrap: none;
+      white-space: nowrap;
+      background: #e7e7e7;
+      border: 1px solid #ccc;
+      border-radius: 900px;
+      padding: 0.5rem 1rem;
+      transition: background 0.2s; }
+      main .content .categories .category:hover {
+        background: #ddd; }
+    main .content .categories .active {
+      background: #777;
+      color: white;
+      border-color: #999; }
+      main .content .categories .active:hover {
+        background: #555; }
+  main .content .videos {
+    max-height: 86vh;
     overflow-y: scroll;
     background: beige; }
-    main .videos .video-section {
+    main .content .videos .video-section {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       margin-top: 1rem; }
-      main .videos .video-section .video-container {
+      main .content .videos .video-section .video-container {
         display: flex;
         flex-direction: column;
         margin: 0.5rem 0.8rem;
         padding: 0.5rem 0.8rem; }
-        main .videos .video-section .video-container .thumbnail {
+        main .content .videos .video-section .video-container .thumbnail {
           position: relative;
           display: flex;
           background-color: #ccc; }
-          main .videos .video-section .video-container .thumbnail::before {
+          main .content .videos .video-section .video-container .thumbnail::before {
             content: attr(data-video-lenght);
             position: absolute;
             background-color: rgba(0, 0, 0, 0.8);
@@ -155,33 +192,33 @@ main {
             padding: 0.1em 0.3em;
             border-radius: 0.3em;
             font-size: 1.2rem; }
-          main .videos .video-section .video-container .thumbnail-image {
+          main .content .videos .video-section .video-container .thumbnail-image {
             height: 100%;
             width: 100%;
             min-height: 150px;
             min-width: 250px; }
-        main .videos .video-section .video-container .video-channel-icon {
+        main .content .videos .video-section .video-container .video-channel-icon {
           margin-right: 0.75rem;
           border-radius: 50%;
           width: 36px;
           height: 36px;
           background-color: #ccc; }
-        main .videos .video-section .video-container .video-bottom-section {
+        main .content .videos .video-section .video-container .video-bottom-section {
           display: flex;
           align-items: flex-start;
           margin-top: 0.4rem; }
-          main .videos .video-section .video-container .video-bottom-section .video-details-section {
+          main .content .videos .video-section .video-container .video-bottom-section .video-details-section {
             display: flex;
             flex-direction: column; }
-            main .videos .video-section .video-container .video-bottom-section .video-details-section .video-title {
+            main .content .videos .video-section .video-container .video-bottom-section .video-details-section .video-title {
               font-weight: bold;
               margin-bottom: 0.5rem;
               text-decoration: none;
               color: black; }
-            main .videos .video-section .video-container .video-bottom-section .video-details-section .video-channel-name {
+            main .content .videos .video-section .video-container .video-bottom-section .video-details-section .video-channel-name {
               transition: color 0.15s;
               color: #555; }
-              main .videos .video-section .video-container .video-bottom-section .video-details-section .video-channel-name:hover {
+              main .content .videos .video-section .video-container .video-bottom-section .video-details-section .video-channel-name:hover {
                 color: #999; }
-            main .videos .video-section .video-container .video-bottom-section .video-details-section .video-metadata {
+            main .content .videos .video-section .video-container .video-bottom-section .video-details-section .video-metadata {
               color: #555; }
