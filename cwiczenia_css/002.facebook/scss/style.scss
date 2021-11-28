@@ -1,3 +1,7 @@
+@mixin shadow {
+  box-shadow: 0px 1px 5px 0px #aaa;
+}
+
 *,
 *::before,
 *::after {
@@ -13,13 +17,38 @@ html {
 
 body {
   font-size: 1.6rem;
+  background: #eee;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+
+  &-track {
+    background: none;
+  }
+
+  &-thumb {
+    background: #555;
+    border-radius: 2rem;
+
+    &:hover {
+      background: #888;
+    }
+  }
 }
 
 .header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 5px 0px #333;
+  @include shadow;
   &__part {
     display: flex;
     align-items: center;
@@ -97,17 +126,20 @@ body {
     &:hover .tooltip {
       opacity: 0.8;
     }
+
     &--active {
-      color: #2d81ff;
+      color: #1877f2;
+
       &::after {
         content: "\00a0";
-        background: #2d81ff;
+        background: #1877f2;
         width: 100%;
         height: 0.5rem;
         position: absolute;
         top: 100%;
         border-radius: 100px;
       }
+
       &:hover {
         background: none;
       }
@@ -115,10 +147,11 @@ body {
   }
 
   &__icon {
-    height: 5rem;
-    width: 5rem;
+    height: 4rem;
+    width: 4rem;
   }
 }
+
 .user {
   &__info {
     border-radius: 500px;
@@ -142,6 +175,7 @@ body {
     margin: 0 0.5rem;
   }
 }
+
 .controls {
   display: flex;
   align-content: center;
@@ -196,8 +230,324 @@ body {
   opacity: 0;
   position: absolute;
   top: 120%;
-  background: #333;
+  background: #000;
   color: #fff;
   border-radius: 500px;
   padding: 1rem;
 }
+
+.main {
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation {
+  display: flex;
+  overflow: hidden;
+  min-width: 300px;
+  position: fixed;
+  top: 7rem;
+  left: 0;
+  bottom: 0;
+
+  &:hover {
+    overflow-y: scroll;
+  }
+
+  &__list {
+    flex-grow: 1;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-top: 1rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 1rem;
+
+    &:hover {
+      background: #ccc;
+    }
+  }
+
+  &__icon {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__name {
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.stories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+
+  &__item {
+    position: relative;
+    margin: 0.5rem 0.5rem;
+  }
+
+  &__img {
+    border-radius: 2rem;
+    @include shadow;
+  }
+
+  &__avatar {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    border: 0.5rem solid #1877f2;
+  }
+
+  &__username {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: #fff;
+    font-size: 2rem;
+  }
+}
+@mixin separator() {
+  position: relative;
+  &::before {
+    content: "\00a0";
+    position: absolute;
+    top: 0;
+    width: 95%;
+    border-top: solid 1px #ddd;
+  }
+}
+
+.posting {
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  @include shadow;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+    &--separator {
+      @include separator();
+    }
+  }
+
+  &__avatar {
+    height: 5rem;
+    width: 5rem;
+    margin: 0 1rem;
+    border-radius: 50%;
+  }
+
+  &__form {
+    background: #eee;
+    border-radius: 500px;
+    padding: 1rem 0.5rem;
+    margin: 0 1rem;
+    display: flex;
+    flex-grow: 1;
+  }
+
+  &__input {
+    padding-left: 2rem;
+    font-size: 2rem;
+    background: #eee;
+    color: #aaa;
+    outline: none;
+    border: none;
+    flex-grow: 1;
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  @mixin buttonColor($color) {
+    color: #ccc;
+    background: darken($color, 40);
+    &:hover {
+      background: darken($color, 20);
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    border-radius: 500px;
+    padding: 1rem 0.5rem;
+    margin: 0 1rem;
+    font-size: 2rem;
+    @include shadow;
+
+    &--red {
+      color: #ccc;
+      @include buttonColor(#f22);
+    }
+
+    &--green {
+      color: #ccc;
+      @include buttonColor(#2f2);
+    }
+    &--yellow {
+      color: #ccc;
+      @include buttonColor(#fd2);
+    }
+  }
+
+  &__buttonimg {
+    height: 3rem;
+    width: 3rem;
+    margin: 0 0.5rem;
+  }
+
+  &__buttonname {
+    margin: 0 1rem;
+  }
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.post {
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  @include shadow;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 2rem 1rem;
+  }
+
+  &__avatar {
+    height: 5rem;
+    width: 5rem;
+    margin: 0 1rem;
+    border-radius: 50%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__author {
+    padding: 1rem 0.5rem;
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 1.8rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__date {
+    padding: 0 0.5rem;
+    margin: 0 1rem;
+    color: #888;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__description {
+    margin: 0.5rem 1rem;
+    font-size: 2rem;
+  }
+
+  &__img {
+    padding: 1rem 0;
+  }
+
+  &__metadata {
+    display: flex;
+    margin: 1rem 0.5rem;
+    font-size: 2rem;
+  }
+
+  &__likes {
+    flex-grow: 1;
+    margin-left: 1rem;
+  }
+
+  &__comments {
+    padding: 0 1rem;
+  }
+  &__share {
+    padding: 0 1rem;
+  }
+
+  &__options {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0.5rem 0.5rem;
+    padding: 2rem 0;
+    font-size: 2rem;
+    @include separator();
+  }
+
+  &__button {
+    display: flex;
+    padding: 1rem 5rem;
+    border-radius: 100px;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+}
+// <div class="posts">
+//         <div class="post">
+//           <div class="post__metadata">
+//             <span class="post__likes">3213 Likes</span>
+//             <span class="post__comments">12 Comments</span>
+//             <span class="post__share">5 Shares</span>
+//           </div>
+//           <div class="post__options">
+//             <div class="post__button"><img src="icons/like.svg" alt="" class="post__butttonicon"><span class="posting__buttonname">Me gusta!</span></div>
+//             <div class="post__button"><img src="icons/like.svg" alt="" class="post__butttonicon"><span class="posting__buttonname">Comment!</span></div>
+//             <div class="post__button"><img src="icons/like.svg" alt="" class="post__butttonicon"><span class="posting__buttonname">Share!</span></div>
+//           </div>
+//         </div>
+//       </div>
