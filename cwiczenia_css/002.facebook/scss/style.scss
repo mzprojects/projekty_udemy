@@ -437,7 +437,6 @@ body {
 .posts {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
 }
 
 .post {
@@ -445,7 +444,7 @@ body {
   background: #fff;
   flex-direction: column;
   border-radius: 1rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
   @include shadow;
 
   &__header {
