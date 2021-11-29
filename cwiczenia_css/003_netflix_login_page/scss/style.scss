@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,700;1,400&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Kanit", Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  color: #fff;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  margin-top: 2rem;
+}
+
+.logo {
+  flex-grow: 1;
+  margin: 0 2rem;
+
+  &__img {
+    height: 3rem;
+  }
+}
+
+.language {
+  margin: 0 1rem;
+
+  &__select {
+    height: 4rem;
+    color: inherit;
+    background: #444;
+    border-radius: 0.5rem;
+    border: 1px solid #fff;
+    font-size: inherit;
+    padding: 1rem 2rem;
+    option {
+      background: #888;
+    }
+  }
+}
+
+.login {
+  margin: 0 1rem;
+
+  &__button {
+    color: inherit;
+    background: #e23;
+    height: 4rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: inherit;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.sections {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 3rem;
+  border-bottom: 0.5rem solid #444;
+  &--column {
+    flex-direction: column;
+  }
+
+  &__background {
+    position: absolute;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -4rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__backgroundimg {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -4rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    overflow: hidden;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    width: 40%;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  &__desc {
+    font-size: 2.5rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+  }
+
+  &__input {
+    flex-grow: 1;
+    height: 5rem;
+    padding-left: 2rem;
+    &:focus + .form__inputlabel {
+      top: 2%;
+      left: 2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__inputlabel {
+    color: #888;
+    font-size: 2rem;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    transition: linear 0.1s;
+  }
+
+  &__button {
+    color: inherit;
+    background: #e23;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    &:hover {
+      cursor: pointer;
+      background: lighten(#e23, 5);
+    }
+  }
+}
+
+// <div class="section__column">
+//           <div class="form">
+//             <span class="form__label"
+//               >Zaczynamy oglądać? Wprowadź adres e‑mail, aby utworzyć lub
+//               odnowić konto.
+//             </span>
+
+//             <form action="#" class="form__wrapper">
+//               <input type="email" class="form__input" id="email-input" />
+//               <label class="form__inputlabel" for="email-input"
+//                 >Adres e-mail</label
+//               >
+//               <button class="form__button">Rozpocznij ></button>
+//             </form>
+//           </div>
