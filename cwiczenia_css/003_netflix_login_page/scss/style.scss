@@ -30,8 +30,8 @@ body {
 .header {
   display: flex;
   height: 45px;
-  margin: 0 1rem;
-  padding-top: 1rem;
+  margin: 0 1em;
+  padding-top: 1em;
 }
 
 .logo {
@@ -43,13 +43,18 @@ body {
 }
 
 .language {
-  margin: 0 0.5rem;
+  margin: 0 0.5em;
+
+  &--footer {
+    width: 70%;
+    margin: 1em auto;
+  }
 
   &__select {
     color: inherit;
     font-size: 0.8rem;
     background: $n_black;
-    padding: 0.5rem 0.2rem;
+    padding: 0.5em 0.2em;
 
     option {
       color: inherit;
@@ -59,12 +64,12 @@ body {
 }
 
 .login {
-  margin-right: 0.5rem;
+  margin-right: 0.5em;
   &__button {
     color: inherit;
     font-size: 0.8rem;
     background: $n_red;
-    padding: 0.5rem 0.4rem;
+    padding: 0.5em 0.4em;
     border-radius: 0.3rem;
     border: none;
     &:hover {
@@ -78,7 +83,7 @@ body {
 .section {
   position: relative;
   text-align: center;
-  padding: 1rem 0;
+  padding: 1em 0;
   border-bottom: 5px solid $n_gray;
   background: $n_black;
   &--top {
@@ -121,20 +126,20 @@ body {
   }
 
   &__column {
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
   }
 
   &__title {
     margin: 0 auto;
     width: 70%;
     font-size: 1.6rem;
-    padding: 2rem 0 0 1rem;
+    padding: 2em 0 1em 0;
   }
 
   &__desc {
-    margin: 1rem auto;
-    width: 70%;
     font-size: 1.4rem;
+    margin: 1em auto;
+    width: 70%;
   }
 
   &__video-wrapper {
@@ -163,7 +168,7 @@ body {
 
 .form {
   &__wrapper {
-    margin: 1rem auto;
+    margin: 1em auto;
     width: 70%;
   }
 
@@ -173,10 +178,10 @@ body {
   &__input {
     width: 100%;
     font-size: 0.8rem;
-    padding: 0.7rem 2rem;
+    padding: 0.7em 2em;
     &:focus + .form__inputlabel {
       font-size: 0.6rem;
-      top: 0.2rem;
+      top: 0.2em;
     }
   }
 
@@ -187,20 +192,20 @@ body {
   }
 
   &__inputlabel {
-    position: absolute;
-    top: 0.8rem;
-    left: 2rem;
-    color: $n_black;
     font-size: 0.8rem;
+    position: absolute;
+    top: 0.8em;
+    left: 2em;
+    color: $n_black;
     transition: linear 0.1s;
   }
 
   &__button {
-    margin: 0.5rem auto;
-    color: inherit;
     font-size: 0.8rem;
+    margin: 0.5em auto;
+    color: inherit;
     background: $n_red;
-    padding: 0.7rem 1.5rem;
+    padding: 0.7em 1.5em;
     border-radius: 0.3rem;
     border: none;
     &:hover {
@@ -213,8 +218,8 @@ body {
 .faq {
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
   text-align: left;
+  font-size: 1rem;
 
   &__wrapper {
     border: 1px solid $n_black;
@@ -227,7 +232,7 @@ body {
     width: 100%;
     color: inherit;
     font-size: 1rem;
-    padding: 0.5rem 1em;
+    padding: 0.5em 1em;
     background: $n_gray;
     border: none;
   }
@@ -259,7 +264,7 @@ body {
     }
     span {
       display: block;
-      padding: 1rem;
+      padding: 1em;
     }
   }
 }
@@ -274,19 +279,24 @@ body {
   }
 
   &__text {
-    margin-left: 5rem;
-    color: $n_gray;
     font-size: 0.8rem;
+    color: $n_gray;
+    width: 70%;
+    margin: 0 auto;
   }
 
   &__nav {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
+    width: 70%;
+    margin: 1em auto;
+    padding: 0;
   }
 
   &__link {
-    margin: 2rem 4rem;
+    width: 100%;
+    max-width: 65px;
   }
 }
 // <div class="section footer">

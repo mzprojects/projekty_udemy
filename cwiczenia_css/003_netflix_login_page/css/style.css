@@ -21,8 +21,8 @@ body {
 .header {
   display: flex;
   height: 45px;
-  margin: 0 1rem;
-  padding-top: 1rem; }
+  margin: 0 1em;
+  padding-top: 1em; }
 
 .logo {
   margin-right: auto; }
@@ -31,23 +31,26 @@ body {
     height: 90%; }
 
 .language {
-  margin: 0 0.5rem; }
+  margin: 0 0.5em; }
+  .language--footer {
+    width: 70%;
+    margin: 1em auto; }
   .language__select {
     color: inherit;
     font-size: 0.8rem;
     background: #000;
-    padding: 0.5rem 0.2rem; }
+    padding: 0.5em 0.2em; }
     .language__select option {
       color: inherit;
       background: #444; }
 
 .login {
-  margin-right: 0.5rem; }
+  margin-right: 0.5em; }
   .login__button {
     color: inherit;
     font-size: 0.8rem;
     background: #e23;
-    padding: 0.5rem 0.4rem;
+    padding: 0.5em 0.4em;
     border-radius: 0.3rem;
     border: none; }
     .login__button:hover {
@@ -56,7 +59,7 @@ body {
 .section {
   position: relative;
   text-align: center;
-  padding: 1rem 0;
+  padding: 1em 0;
   border-bottom: 5px solid #444;
   background: #000; }
   .section--top {
@@ -88,16 +91,16 @@ body {
     object-fit: cover;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.9) 100%); }
   .section__column {
-    margin-bottom: 2rem; }
+    margin-bottom: 2em; }
   .section__title {
     margin: 0 auto;
     width: 70%;
     font-size: 1.6rem;
-    padding: 2rem 0 0 1rem; }
+    padding: 2em 0 1em 0; }
   .section__desc {
-    margin: 1rem auto;
-    width: 70%;
-    font-size: 1.4rem; }
+    font-size: 1.4rem;
+    margin: 1em auto;
+    width: 70%; }
   .section__video-wrapper {
     position: relative; }
   .section__img {
@@ -115,7 +118,7 @@ body {
     height: 100%; }
 
 .form__wrapper {
-  margin: 1rem auto;
+  margin: 1em auto;
   width: 70%; }
 
 .form__input-wrapper {
@@ -124,10 +127,10 @@ body {
 .form__input {
   width: 100%;
   font-size: 0.8rem;
-  padding: 0.7rem 2rem; }
+  padding: 0.7em 2em; }
   .form__input:focus + .form__inputlabel {
     font-size: 0.6rem;
-    top: 0.2rem; }
+    top: 0.2em; }
 
 .form__label {
   margin: 1rem auto;
@@ -135,19 +138,19 @@ body {
   font-size: 1rem; }
 
 .form__inputlabel {
-  position: absolute;
-  top: 0.8rem;
-  left: 2rem;
-  color: #000;
   font-size: 0.8rem;
+  position: absolute;
+  top: 0.8em;
+  left: 2em;
+  color: #000;
   transition: linear 0.1s; }
 
 .form__button {
-  margin: 0.5rem auto;
-  color: inherit;
   font-size: 0.8rem;
+  margin: 0.5em auto;
+  color: inherit;
   background: #e23;
-  padding: 0.7rem 1.5rem;
+  padding: 0.7em 1.5em;
   border-radius: 0.3rem;
   border: none; }
   .form__button:hover {
@@ -157,8 +160,8 @@ body {
 .faq {
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
-  text-align: left; }
+  text-align: left;
+  font-size: 1rem; }
   .faq__wrapper {
     border: 1px solid #000; }
   .faq__question {
@@ -168,7 +171,7 @@ body {
     width: 100%;
     color: inherit;
     font-size: 1rem;
-    padding: 0.5rem 1em;
+    padding: 0.5em 1em;
     background: #444;
     border: none; }
   .faq__question-text {
@@ -193,7 +196,7 @@ body {
       overflow: hidden; }
     .faq__answer span {
       display: block;
-      padding: 1rem; }
+      padding: 1em; }
 
 .footer {
   text-align: left;
@@ -202,12 +205,17 @@ body {
     text-decoration: none;
     color: #444; }
   .footer__text {
-    margin-left: 5rem;
+    font-size: 0.8rem;
     color: #444;
-    font-size: 0.8rem; }
+    width: 70%;
+    margin: 0 auto; }
   .footer__nav {
     display: flex;
     list-style: none;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 1em auto;
+    padding: 0; }
   .footer__link {
-    margin: 2rem 4rem; }
+    width: 100%;
+    max-width: 65px; }
