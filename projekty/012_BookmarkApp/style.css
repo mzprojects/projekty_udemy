@@ -120,12 +120,3 @@ body {
   text-decoration: none;
   color: #000;
 }
-
-/*
-          <li class="result__item">
-            <h2 class="result__name">Google</h2>
-            <button class="result__btn result__btn--url">
-              <a class="result__link" href="#">Visit</a>
-            </button>
-            <button class="result__btn result__btn--delete">Delete</button>
-          </li> */
