@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.top {
+  border-bottom: 1px solid #ddd;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 400;
+  padding: 1em 0;
+}
+
+.main {
+  margin: 1em 0;
+  background: #eee;
+  padding: 2em;
+}
+
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__title {
+  font-size: 3rem;
+  margin-top: 1em;
+}
+
+.form__label {
+  font-weight: bold;
+  font-size: 2rem;
+  padding-top: 0.5em;
+}
+
+.form__input {
+  width: 80%;
+  font-size: 2rem;
+  padding: 0.25em 1em;
+  border: 1px solid #aaa;
+}
+
+.form__input:focus {
+  outline: 1px solid #90c4ff;
+}
+
+.form__submit {
+  font-size: 2rem;
+  border-radius: 0.25em;
+  background: #006eff;
+  color: #fff;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+}
+.form__submit:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.result {
+  list-style: none;
+}
+
+.result__item {
+  display: flex;
+  justify-content: center;
+  background: #f3f3f3;
+  padding: 2em 1em;
+  margin: 1em 0;
+}
+
+.result__name {
+  font-size: 3rem;
+  padding-right: 2rem;
+}
+
+.result__btn {
+  font-size: 2rem;
+  padding: 0 1em;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+.result__btn--url {
+  background: #fff;
+}
+.result__btn--delete {
+  background: #ff4646;
+  color: #fff;
+}
+
+.result__btn:hover {
+  opacity: 0.9;
+}
+
+.result__link {
+  text-decoration: none;
+  color: #000;
+}
+
+/*
+          <li class="result__item">
+            <h2 class="result__name">Google</h2>
+            <button class="result__btn result__btn--url">
+              <a class="result__link" href="#">Visit</a>
+            </button>
+            <button class="result__btn result__btn--delete">Delete</button>
+          </li> */
