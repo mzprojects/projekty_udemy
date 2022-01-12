@@ -1,11 +1,11 @@
 class Bookmark {
-  constructor(name, url, id) {
+  constructor(name, url) {
     this.name = name
     this.url = url
     const getID = () => {
-      const result = document.querySelector('.result').lastElementChild
-      if (result) {
-        return parseInt(result.dataset.id) + 1
+      const lastItem = document.querySelector('.result').lastElementChild
+      if (lastItem) {
+        return parseInt(lastItem.dataset.id) + 1
       } else {
         return 1
       }
@@ -79,9 +79,8 @@ class UI {
       alert('Please fill in all fields')
       return
     } else {
-      const expression =
+      const regexp =
         /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
-      const regexp = new RegExp(expression)
       if (url.match(regexp)) {
         return true
       } else {
@@ -102,7 +101,7 @@ document.querySelector('.form__submit').addEventListener('click', (e) => {
   const siteName = document.querySelector('.form__input--name').value
   const siteUrl = document.querySelector('.form__input--url').value
 
-  if (UI.validateData(siteName, siteUrl) == true) {
+  if (UI.validateData(siteName, siteUrl)) {
     const bookmark = new Bookmark(siteName, siteUrl)
     UI.addBookmarkToList(bookmark)
     Store.addData(bookmark)
