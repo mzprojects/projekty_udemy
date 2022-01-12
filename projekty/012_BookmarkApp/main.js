@@ -2,11 +2,17 @@ class Bookmark {
   constructor(name, url, id) {
     this.name = name
     this.url = url
-    this.id = id
+    const getID = () => {
+      const result = document.querySelector('.result').lastElementChild
+      if (result) {
+        return parseInt(result.dataset.id) + 1
+      } else {
+        return 1
+      }
+    }
+    this.id = getID().toString()
   }
 }
-
-// Store in localStorage
 
 class Store {
   static getData() {
@@ -38,8 +44,6 @@ class Store {
     })
   }
 }
-
-// UI
 
 class UI {
   static displayList() {
@@ -86,27 +90,12 @@ class UI {
     }
   }
 
-  static getId() {
-    let id = 1
-    const ul = document.querySelector('.result')
-    if (ul.lastElementChild === null) {
-      id = 1
-    } else {
-      id = parseInt(ul.lastElementChild.dataset.id) + 1
-    }
-    return id
-  }
-
   static clearFields() {
     document.querySelectorAll('.form__input').forEach((el) => (el.value = ''))
   }
 }
 
-// load data
-
 document.addEventListener('DOMContentLoaded', UI.displayList)
-
-// Event - Submit bookmark
 
 document.querySelector('.form__submit').addEventListener('click', (e) => {
   e.preventDefault()
@@ -114,15 +103,12 @@ document.querySelector('.form__submit').addEventListener('click', (e) => {
   const siteUrl = document.querySelector('.form__input--url').value
 
   if (UI.validateData(siteName, siteUrl) == true) {
-    const id = UI.getId().toString()
-    const bookmark = new Bookmark(siteName, siteUrl, id)
+    const bookmark = new Bookmark(siteName, siteUrl)
     UI.addBookmarkToList(bookmark)
     Store.addData(bookmark)
     UI.clearFields()
   }
 })
-
-// Event - Delete bookmark
 
 document.querySelector('.result').addEventListener('click', (e) => {
   if (e.target.className == 'result__btn result__btn--delete') {
