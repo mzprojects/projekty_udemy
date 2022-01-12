@@ -66,6 +66,7 @@ class UI {
         <button class="result__btn result__btn--delete">Delete</button>`
 
     ul.appendChild(item)
+    this.clearFields()
   }
 
   static deleteBookmark(e) {
@@ -105,7 +106,6 @@ document.querySelector('.form__submit').addEventListener('click', (e) => {
     const bookmark = new Bookmark(siteName, siteUrl)
     UI.addBookmarkToList(bookmark)
     Store.addData(bookmark)
-    UI.clearFields()
   }
 })
 
